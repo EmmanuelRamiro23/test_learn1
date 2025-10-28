@@ -1,0 +1,76 @@
+.container {
+    height: 50vh;
+    max-height: 80vh;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+}
+
+.items {
+    border: 2px solid black;
+    background-color: skyblue;
+}
+
+.item-1 {
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+
+.item-2 {
+    grid-column: 1/2;
+    grid-row: 1/4;
+}
+
+/*Se pueden encimar los elementos en grid*, osea sobreponer uno sobre otro*/
+.item-3 {
+    /*Aca se enciman los elementos*/
+    grid-column: 3/4;
+    grid-row: 2/4;
+}
+
+.item-4 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.item-5 {
+    grid-column: 2/4;
+}
+
+.item-6 {
+    grid-column: 1/4;
+}
+
+.container-area {
+    width: 100%;
+    border: 2px solid green;
+    display: grid;
+    /*Asi seran todas las filas que se agregen*/
+    /*Aca columna que se agrege tendra un 33% jaja*/
+    grid-auto-columns: 33%;
+    grid-auto-rows: 200px;
+    grid-template-areas: "header header header"
+                         "menu content content"
+                         "menu footer footer"
+                         "extra extra extra";
+}
+.item{
+    border: 2px solid black;
+    background-color: lightgreen;
+}
+.item-a{
+    grid-area: header;
+}
+.item-b{
+    grid-area: menu;
+}
+.item-c{
+    grid-area: content;
+}
+.item-d{
+    grid-area: footer;
+}
+.item-e{
+    grid-area: extra;
+}
