@@ -33,8 +33,17 @@ html {
 }
 
 /*-----Veamos ahora como es que funciona el posicionamiento absoluto en css---*/
+/*El elemento de referencia sobre el cual trabajara el elemento hijo no debe de tener una posicion static, osea debe de ser diferente de ella*/
+/*Este es mi elemento padre bb*/
+/*En el caso de que se trate de un posicionamiento no estático, utilizará este contenedor de marco de referencia, posicionando nuestro elemento absolute.
+
+En el caso de que se trate de un posicionamiento estático, continuará buscando, ahora con el siguiente contenedor padre, así hasta llegar a uno que no sea estático o al llegar al elemento <body>, que sería el último y el que utilizaría como marco de referencia.*/
 .position-absolute {
+    /*No debe de tener una posicion static, tiene que ser diferente de esta como lo muestro a continuacion*/
+    padding: relative;
     width: 50%;
     height: 50%;
     background-color: skyblue;
 }
+
+/*La propiedad absolute se la damos al elementon hijo*/
