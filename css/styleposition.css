@@ -1,0 +1,40 @@
+/*Position relative se posiciona al mismo que static, solo que se coloca dependiendo de las medidas que demos con top, bottom, left o right
+, es decir esta si acepta estas propiedades, pero tanto como z-index y las demas funcionan con una posicion diferente de la static*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    background-color: red;
+    width: 200px;
+    height: 150px;
+    left: 25px;
+    /*Ahora esta colocado por encima del otro, pues 1 es mayor que 0 jaja*/
+    z-index: 1;
+}
+
+/*Podemos usar z-index para indicar la profundidad de un elemento, por defecto todos los elementos tienen un valor de esta propiedad de cero jaja,
+ , en este caso se lo damos al elemento container de arriba, osea el rojo*/
+.container2 {
+    background-color: blue;
+    position: relative;
+    width: 200px;
+    height: 150px;
+    top: -50px;
+    left: 50px;
+}
+
+/*-----Veamos ahora como es que funciona el posicionamiento absoluto en css---*/
+.position-absolute {
+    width: 50%;
+    height: 50%;
+    background-color: skyblue;
+}
