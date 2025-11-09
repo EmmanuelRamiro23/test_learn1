@@ -40,10 +40,128 @@ html {
 En el caso de que se trate de un posicionamiento estático, continuará buscando, ahora con el siguiente contenedor padre, así hasta llegar a uno que no sea estático o al llegar al elemento <body>, que sería el último y el que utilizaría como marco de referencia.*/
 .position-absolute {
     /*No debe de tener una posicion static, tiene que ser diferente de esta como lo muestro a continuacion*/
-    padding: relative;
+    position: relative;
     width: 50%;
     height: 50%;
     background-color: skyblue;
+    padding: 1px;
+    z-index: 5;
 }
 
 /*La propiedad absolute se la damos al elementon hijo*/
+.subhijo {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    width: 20%;
+    height: 20%;
+    z-index: 1;
+    background-color: blue;
+}
+
+.subhijo1 {
+    position: relative;
+    top: -20px;
+    left: 40px;
+    width: 20%;
+    height: 20%;
+    z-index: 3;
+    background-color: green;
+}
+
+.subhijo2 {
+    position: relative;
+    top: -40px;
+    left: 60px;
+    width: 20%;
+    height: 20%;
+    z-index: 2;
+    background-color: yellow;
+}
+
+.position-absolute2 {
+    /*No debe de tener una posicion static, tiene que ser diferente de esta como lo muestro a continuacion*/
+    margin: 10px;
+    position: relative;
+    width: 50%;
+    height: 50%;
+    top: -100px;
+    background-color: red;
+    padding: 1px;
+    /*Esto crea un contexto de apilamiento, mientras que en valor de auto no, pues con ese valor permite que todos sus hijos actuen globlamente con todos los demas, y si damos un valor de 0 o mayor lo que 
+    pasara es que se creara una especie de barrera que no permitira que sus hijos salgan del contexto de su padre hacia los demas*/
+    z-index: 4;
+    border: 3px solid gold;
+}
+
+/*La propiedad absolute se la damos al elementon hijo*/
+.subhijo2 {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    width: 20%;
+    height: 20%;
+    z-index: 1;
+    background-color: blue;
+}
+
+.subhijo12 {
+    position: relative;
+    top: -20px;
+    left: 40px;
+    width: 20%;
+    height: 20%;
+    z-index: 6;
+    background-color: green;
+}
+
+.subhijo22 {
+    position: relative;
+    top: -40px;
+    left: 60px;
+    width: 20%;
+    height: 20%;
+    z-index: 2;
+    background-color: yellow;
+}
+.position-absolute3 {
+    /*No debe de tener una posicion static, tiene que ser diferente de esta como lo muestro a continuacion*/
+    margin: 10px;
+    position: relative;
+    width: 50%;
+    height: 50%;
+    top: -400px;
+    background-color: red;
+    padding: 1px;
+    /*Esto crea un contexto de apilamiento, mientras que en valor de auto no, pues con ese valor permite que todos sus hijos actuen globlamente con todos los demas, y si damos un valor de 0 o mayor lo que 
+    pasara es que se creara una especie de barrera que no permitira que sus hijos salgan del contexto de su padre hacia los demas*/
+    /*Crea un contexto interno, mientras que auto no*/
+    z-index: 3;
+    border: 3px solid black;
+}
+
+/*La propiedad absolute se la damos al elementon hijo*/
+.subhijo3 {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    width: 20%;
+    height: 20%;
+    z-index: 7;
+    background-color: blue;
+}
+
+.subhijo13 {
+    position: relative;
+    top: -20px;
+    left: 40px;
+    width: 20%;
+    height: 20%;
+    z-index: 2;
+    background-color: green;
+}
+.position-absolute2:hover{
+    z-index: 6;
+    top: 0;
+    /*Los valores de top parten desde su origen de posicion, no desde el valor que le demos desde -100px por ejemplo*/
+}
